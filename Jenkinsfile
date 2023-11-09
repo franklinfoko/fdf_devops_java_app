@@ -18,5 +18,17 @@ pipeline {
                 }
             }
         }
+
+        // Unit Testing
+        stage('Unit Test Maven') {
+
+            steps {
+
+                script {
+
+                    mvnTest()
+                }
+            }
+        }
     }
 }
