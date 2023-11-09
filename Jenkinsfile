@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline {
     agent any
 
@@ -9,7 +11,10 @@ pipeline {
 
                 script {
 
-                    git branch: 'main', url: 'https://github.com/franklinfoko/fdf_devops_java_app.git'
+                    gitCheckout{
+                        branch: "main",
+                        url: "https://github.com/franklinfoko/fdf_devops_java_app.git"
+                    }
                 }
             }
         }
